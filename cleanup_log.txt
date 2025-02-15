@@ -10,3 +10,20 @@
 2025-02-15 23:30:47,955 - INFO - Executed: sudo sh -c 'echo "" > /var/log/auth.log'
 2025-02-15 23:30:47,966 - ERROR - Failed to execute: sudo journalctl --vacuum-time=1s | Error: Command 'sudo journalctl --vacuum-time=1s' returned non-zero exit status 1.
 2025-02-15 23:30:47,987 - INFO - Cleanup completed for Linux/macOS.
+2025-02-15 23:35:28,095 - INFO - Detected OS: Linux/macOS
+2025-02-15 23:35:28,107 - INFO - Executed: ssh-keygen -R 192.168.1.100
+2025-02-15 23:35:28,111 - INFO - Executed: history -c && history -w
+2025-02-15 23:35:28,156 - INFO - Executed: sudo sh -c 'echo "" > /var/log/auth.log'
+2025-02-15 23:36:45,735 - INFO - Detected OS: Linux/macOS
+2025-02-15 23:36:45,751 - INFO - Executed: ssh-keygen -R 192.168.1.100
+2025-02-15 23:36:45,755 - INFO - Executed: history -c && history -w
+2025-02-15 23:36:45,791 - INFO - Executed: sudo sh -c 'echo "" > /var/log/auth.log'
+2025-02-15 23:36:45,792 - WARNING - Journalctl command not found. Skipping log rotation.
+2025-02-15 23:36:45,817 - INFO - Cleanup completed for Linux/macOS.
+2025-02-15 23:39:02,049 - INFO - Detected OS: Linux/macOS
+2025-02-15 23:39:02,068 - INFO - Executed: ssh-keygen -R 192.168.1.100
+2025-02-15 23:39:02,072 - INFO - Executed: history -c && history -w
+2025-02-15 23:39:02,104 - INFO - Executed: sudo sh -c 'echo "" > /var/log/auth.log'
+2025-02-15 23:39:02,338 - INFO - Executed: sudo log erase --all
+2025-02-15 23:39:02,377 - INFO - Executed: sudo rm -rf /var/log/*.log
+2025-02-15 23:39:02,407 - INFO - Cleanup completed for Linux/macOS.
