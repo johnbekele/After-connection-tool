@@ -36,7 +36,11 @@ def clean_linux_mac(target_ip, file_path):
 
     # Remove logs
     run_command("sudo sh -c 'echo \"\" > /var/log/auth.log'")
-    run_command("sudo journalctl --vacuum-time=1s")
+
+    if shutil.which("journalctl"):
+        run_command("sudo journalctl --rotate && sudo journalctl --vacuum-size=10M")
+    else:
+        logging.warning("Journalctl command not found. Skipping log rotation.")
 
     # Secure delete transferred file
     if file_path and Path(file_path).exists():
